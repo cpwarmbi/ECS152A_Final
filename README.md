@@ -1,22 +1,27 @@
-#  ECS 152A Programming Assignment 3 (Fall 2024)
+# **ECS152 Final Project: Congestion Control over UDP**
 
-Check the `How to use` section of the README for instructions on indicating the end of sending data.
+## **Overview**
 
-## Congestion Control
-Derived from https://github.com/Haroon96/ecs152a-fall-2023/tree/main/week7
-### Docker Installation
-* [Linux](https://docs.docker.com/engine/install/ubuntu/)
-* [Mac](https://docs.docker.com/desktop/install/mac-install/)
-* [Windows](https://docs.docker.com/desktop/install/windows-install/)
+This repository contains the final project for ECS152: Computer Networking, completed in collaboration with **Akhil Sharma**. The project demonstrates various congestion control mechanisms built on top of a basic UDP service, showcasing their functionality and performance.
 
-### How to use
-(From the `docker` directory).
-1. Run `./start-simulator.sh` to start running our receiver with the emulated network profile. Once it's running successfully, you will see a message saying `Receiver running`. 
-2. The receiver has already been programmed to send acknowledgements to the sender similar to the receiver in the [discussion](https://github.com/Haroon96/ecs152a-fall-2023/blob/main/week7/docker/receiver.py).
-3. Implement your own sender code and bind it to any port other than `5001`. Invoke your sender to send packets to `localhost`, port `5001` to communicate with the receiver.
-4. Finally, on sending all the data, sender should send an empty message with the correct sequence id.
-5. Receiver will then send an ack and fin message for the sender to know it's been acknowledged. (Lines 55 to 59 in receiver.py)
-6. The sender should then send a message with body '==FINACK' to let the receiver know to exit (see line 31 and 32 in receiver.py)
-7. Both sender and receiver will then exit.
+The repository features four working implementations:
+1. **Stop and Wait**
+2. **Fixed Sliding Window**
+3. **TCP Tahoe**
+4. **TCP Reno**
 
-#### You are *not* supposed to make changes to any file in this repository.
+Additionally, an experimental implementation of **TCP Vegas** is included, though it is non-functional due to time constraints.
+
+### **File Directory**
+The source code for the project is located in the following directory:
+
+docker/hdd/
+├── sender_stop_and_wait.py
+├── sender_fixed_sliding_window.py
+├── sender_tahoe.py
+├── sender_reno.py
+└── proj3_CorbinWarmbier_918678676_AkhilSharma_918556170_sender_custom.py
+
+
+### **Written Report**
+The written report for this project, detailing design, methodology, and results, can be found [here](https://docs.google.com/document/d/16O3zLaC5qXGlOwjdRhC-n35dXLaXFQEgAQyncF67KMQ/edit?usp=sharing).
