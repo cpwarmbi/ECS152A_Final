@@ -14,13 +14,14 @@ Additionally, an experimental implementation of **TCP Vegas** is included, thoug
 
 ### **File Directory**
 The source code for the project is located in the following directory:
-
+```
 docker/hdd/
 ├── sender_stop_and_wait.py
 ├── sender_fixed_sliding_window.py
 ├── sender_tahoe.py
 ├── sender_reno.py
 └── proj3_CorbinWarmbier_918678676_AkhilSharma_918556170_sender_custom.py
+```
 
 
 ### **Written Report**
